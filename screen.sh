@@ -1,15 +1,13 @@
 #!/bin/bash
-
-if [ -z "$1" ]; then
-    echo "NO SCREEN!";
-    exit 0;
+# put in ~/.ssh/rc/ ^_^
+SCREEN_NAME=$1;
+if [ -z "$SCREEN_NAME" ]; then
+    SCREEN_NAME=`echo $SSH_CLIENT | awk '{print $1}'`;
 fi
-
-CHECK=`/usr/bin/screen -list | grep "\.$1\s"`;
+CHECK=`/usr/bin/screen -list | grep "\.$SCREEN_NAME\s"`;
 if [ -n "$CHECK" ];
 then
-    screen -rD $1;
+    screen -rD $SCREEN_NAME;
 else
-    screen -S $1;
+    screen -S $SCREEN_NAME;
 fi
-
