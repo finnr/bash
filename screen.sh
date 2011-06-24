@@ -6,9 +6,6 @@ if [ -z "$1" ]; then
 fi
 
 CHECK=`/usr/bin/screen -list | grep "\.$1\s"`;
-echo 1;
-echo $CHECK;
-echo 2;
 if [ -n "$CHECK" ];
 then
     screen -rD $1;
