@@ -1,5 +1,5 @@
 #!/bin/bash
-# put in ~/.ssh/rc/ ^_^
+
 SCREEN_NAME=$1;
 if [ -z "$SCREEN_NAME" ]; then
     SCREEN_NAME=`echo $SSH_CLIENT | awk '{print $1}'`;
