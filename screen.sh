@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# ln -s /root/screen.sh /usr/bin/scr
+# scr
 SCREEN_NAME=$1;
 if [ -z "$SCREEN_NAME" ]; then
     SCREEN_NAME=`echo $SSH_CLIENT | awk '{print $1}'`;
