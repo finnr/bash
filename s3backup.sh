@@ -20,6 +20,7 @@ done
 
 # ALL DATA BASES
 DB_LIST=`/usr/bin/mysql -Bse 'show databases'`
+mkdir -p ${BACKUP_DIR}/db
 cd ${BACKUP_DIR}/db
 for DB in ${DB_LIST}; do
 if [ $DB != 'information_schema' ]
